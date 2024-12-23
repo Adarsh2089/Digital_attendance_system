@@ -1,0 +1,162 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Analysis Report"
+        android:textSize="@dimen/_20ssp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/startDateInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Choose start Date"
+                android:focusable="false"
+                android:clickable="true"
+                android:background="@drawable/custom_edittext_background"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_10ssp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:drawableStart="@drawable/baseline_calendar_month_24"
+                android:drawablePadding="@dimen/_10sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="to"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:fontFamily="serif"/>
+
+            <EditText
+                android:id="@+id/endDateInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Choose end Date"
+                android:focusable="false"
+                android:clickable="true"
+                android:background="@drawable/custom_edittext_background"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_10ssp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:textColor="#000000"
+                android:drawableStart="@drawable/baseline_calendar_month_24"
+                android:drawablePadding="@dimen/_10sdp" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+        app:startIconDrawable="@drawable/baseline_person_24"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text"
+        app:prefixTextColor="@color/purple_200"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:hint="Enter Roll Number">
+
+        <!-- Edit text for roll number input -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/rollNumberInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fetchButton"
+        app:cornerRadius="@dimen/_2sdp"
+        android:elevation="@dimen/_5sdp"
+        android:backgroundTint="@color/green"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fetch Data" />
+
+    <!-- Layout to hold PieCharts and Summary Text Views side by side -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_20sdp">
+
+        <!-- PieChart for DataStructure subject -->
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChartDataStructure"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+
+        <!-- Summary Text for DataStructure subject -->
+        <TextView
+            android:id="@+id/summaryTextDataStructure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attendance Summary"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:padding="16dp"
+            android:textColor="#C8E70202"
+            android:layout_marginTop="@dimen/_1sdp"/>
+    </LinearLayout>
+
+    <!-- Layout for another subject -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_20sdp">
+
+        <!-- PieChart for C Programming subject -->
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChartCProgramming"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="@dimen/_10sdp"/>
+
+        <!-- Summary Text for C Programming subject -->
+        <TextView
+            android:id="@+id/summaryTextCProgramming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attendance Summary"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:padding="16dp"
+            android:textColor="#C8E70202"
+            android:layout_marginTop="@dimen/_1sdp"/>
+    </LinearLayout>
+
+    <!-- Line chart for daily attendance -->
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+</LinearLayout>
+</ScrollView>

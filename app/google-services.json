@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "195071634763",
+    "project_id": "digital-attendance-syste-c9e49",
+    "storage_bucket": "digital-attendance-syste-c9e49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195071634763:android:ef022ae6a9797a8f204cce",
+        "android_client_info": {
+          "package_name": "com.adarsh.digitalattendancesystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAthWbtRCv78VAlx_JlJxL0pe3NSPQznc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
